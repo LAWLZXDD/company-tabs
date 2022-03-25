@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+/* *{
+  border: red solid 1px;
+} */
+
+.formentry{
+  margin-left: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Navibar forced css */
+.navimain{
+  background-color: rgb(0, 0, 0);
+}
+.collapseburger{
+  width: 100%;
+  justify-content: flex-end;
+}
+.companylink{
+  text-decoration: none;
+}
+#company-name{
+  font-size: 30px;
+}
+#company-name:hover{
+  font-weight: bold;
+}
+.nav-links{
+  justify-content: space-evenly;
+}
+#navi-button{
+  font-size: 20px;
+  border: white solid 1px
+}
+#navi-button:hover{
+  color: black;
+  background-color: white;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Homepage -> action buttons */
+#buttoncontainer{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-evenly;
+  margin: 0 20px ;
+  padding: 20px;
+}
+#action-button{
+  background-color: rgb(128, 128, 128);
+  border: black solid 1px;
+}
+#action-button:hover{
+  background-color: rgb(228, 38, 38);
   color: white;
+  font-weight: bold;
+}
+.homepage{
+  background-color: rgba(0, 255, 255, 0.301);
+}
+.glancetable{
+  /* border: red solid 1px; */
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.glance-avail-table{
+  margin: 20px;
+  padding: 30px;
+  border-right: blue solid 1px;
+
+}
+.glance-table-subheader{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.MuiTableCell-head{
+  border: black dotted 1px;
+}
+.MuiTableCell-body{
+  border-right: black dotted 1px;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
