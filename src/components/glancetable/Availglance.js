@@ -1,6 +1,5 @@
 import React from "react";
 import Grid from '@mui/material/Grid'
-import Item from '@mui/material/MenuItem'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -22,14 +21,11 @@ const rows = [
     tempData('Section 4', 25, 25)
 ]
 
+function Availglance(){
 
+    return(
 
-function Glancetable() {
-
-    return (
-
-        <Grid container className="glancetable">
-            <Grid item lg={6} xs={12} className="glance-avail-table">
+        <Grid item xs={12} md={6} className="glance-avail-table">
                 <Paper elevation={0} style={{ 'text-align': 'center' }} className="glance-table-subheader">Available</Paper>
                 <TableContainer style={{ 'border-bottom': 'black solid 1px' }}>
                     <Table style={{border: 'black solid 1px'}}>
@@ -54,18 +50,8 @@ function Glancetable() {
                     </Table>
                 </TableContainer>
             </Grid>
-            <Grid item lg={6} xs={12}>
-                <Item>Taskings(TODO)</Item>
-            </Grid>
-            <Grid item lg={6} xs={12}>
-                <Item>On Leave</Item>
-            </Grid>
-            <Grid item lg={6} xs={12}>
-                <Item>TDY</Item>
-            </Grid>
-        </Grid>
+
     )
 }
 
-
-export default Glancetable
+export default Availglance

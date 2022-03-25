@@ -56,6 +56,8 @@
 .homepage{
   background-color: rgba(0, 255, 255, 0.301);
 }
+
+/* QUICK GLANCE COMPONENT */
 .glancetable{
   /* border: red solid 1px; */
   margin-top: 20px;
@@ -66,7 +68,6 @@
   margin: 20px;
   padding: 30px;
   border-right: blue solid 1px;
-
 }
 .glance-table-subheader{
   font-weight: bold;
@@ -77,6 +78,23 @@
 }
 .MuiTableCell-body{
   border-right: black dotted 1px;
+}
+.glance-tasking-table{
+  margin: 20px;
+  padding: 30px;
+  border-right: blue solid 1px;
+}
+.glance-onleave-table{
+  margin: 20px;
+  padding: 30px;
+  border-right: blue solid 1px;
+  border-top: blue solid 1px;
+}
+.glance-tdy-table{
+  margin: 20px;
+  padding: 30px;
+  border-right: blue solid 1px;
+  border-top: blue solid 1px;
 }
 
 

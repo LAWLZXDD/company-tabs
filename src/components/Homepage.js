@@ -1,6 +1,6 @@
 import React from "react";
 import Actionbuttons from "./Actionbuttons";
-import Glancetable from "./Glancetable";
+import Glancetable from "./glancetable/Glancetable";
 
 function Homepage() {
 
