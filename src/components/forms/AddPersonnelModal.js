@@ -1,9 +1,13 @@
 import { Box, Button, IconButton, Modal, Typography } from '@mui/material';
 import React from 'react';
 import { useState } from 'react';
-import AddPersonnelForm from './AddPersonnelForm';
 import CloseIcon from '@mui/icons-material/Close'
 import { Grid } from '@mui/material';
+
+import InputName from "./InputName";
+import InputGradeRank from "./InputGradeRank";
+import InputSection from "./InputSection";
+import InputContactInfo from './InputContactInfo';
 
 
 const style = {
@@ -29,6 +33,11 @@ function AddPersonnelModal() {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+    function handleSubmit(e) {
+        e.preventDefault()
+        alert('User Info created on Database')
+    }
 
 
     return (
@@ -61,7 +70,18 @@ function AddPersonnelModal() {
                         </Box>
 
                     </Grid>
-                    <AddPersonnelForm />
+                    {/* FORM IS HERE */}
+                    <Grid>
+                        <form onSubmit={handleSubmit} >
+
+                            <InputGradeRank />
+                            <InputSection />
+                            <InputName />
+                            <InputContactInfo />
+
+                            <button type="submit">Submit</button>
+                        </form>
+                    </Grid>
                 </Box>
             </Modal>
         </Box>

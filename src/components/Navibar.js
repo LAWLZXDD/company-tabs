@@ -61,7 +61,7 @@ function Navibar() {
                                 anchorEl={anchorElNav}
                                 anchorOrigin={{
                                     vertical: 'bottom',
-                                    horizontal: 'left',
+                                    horizontal: 'left'
                                 }}
                                 keepMounted
                                 transformOrigin={{
