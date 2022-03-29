@@ -13,6 +13,8 @@ function tempData(section, totalIn, avail) {
     return { section, totalIn, avail }
 }
 
+const sectionNames = {name: ''}
+
 const rows = [
     tempData('Company', 100, 70),
     tempData('Section 1', 25, 10),
@@ -31,7 +33,7 @@ function Availglance(){
                     <Table style={{border: 'black solid 1px'}}>
                         <TableHead>
                             <TableRow>
-                                <TableCell align="center">Section</TableCell>
+                                <TableCell align="center">{sectionNames.name}</TableCell>
                                 <TableCell align="center">Total In</TableCell>
                                 <TableCell align="center">Available</TableCell>
                             </TableRow>
