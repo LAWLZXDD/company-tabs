@@ -11,7 +11,7 @@ function InputName() {
 
 
     return (
-        <FormControl sx={{ m: 1, minWidth: 100 }}>
+        <FormControl sx={{ m: 1, minWidth: 50 }}>
             <TextField
                 required
                 variant="standard"

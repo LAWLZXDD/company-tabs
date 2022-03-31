@@ -8,6 +8,7 @@ import InputName from "./InputName";
 import InputGradeRank from "./InputGradeRank";
 import InputSection from "./InputSection";
 import InputContactInfo from './InputContactInfo';
+import InputDob from './InputDob';
 
 
 const style = {
@@ -49,11 +50,12 @@ function AddPersonnelModal() {
             > Add Personnel
             </Button>
             <Modal
+                
                 open={open}
                 onClose={handleClose}
             >
 
-                <Box sx={style}>
+                <Box sx={style} id='formentrybox'>
                     <IconButton onClick={handleClose}
                         sx={{ 'display': 'flex', 'margin-left': 'auto' }}
                     >
@@ -70,14 +72,25 @@ function AddPersonnelModal() {
                         </Box>
 
                     </Grid>
-                    {/* FORM IS HERE */}
+                    {/* FORM STARTS HERE */}
                     <Grid>
                         <form onSubmit={handleSubmit} >
 
-                            <InputGradeRank />
-                            <InputSection />
-                            <InputName />
-                            <InputContactInfo />
+                            <Box>
+                                <InputGradeRank />
+                                <InputSection />
+                                <InputName />
+                                <InputDob />
+                            </Box>
+
+                            <Box>
+                                <InputContactInfo />
+                            </Box>
+                            
+                            
+                            
+                            
+                            
 
                             <button type="submit">Submit</button>
                         </form>

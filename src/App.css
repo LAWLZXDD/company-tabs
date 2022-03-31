@@ -1,9 +1,14 @@
 *{
   /* border: red solid 1px; */
 }
-
+/* Add Personnel Form CSS */
 .formentry{
   margin-left: 10px;
+}
+#formentrybox{
+  /* width: auto; */
+  max-width: 800px;
+  /* min-height: 300px; */
 }
 
 /* Navibar forced css */
@@ -96,6 +101,21 @@
   border-right: blue solid 1px;
   border-top: blue solid 1px;
 }
+@media only screen and (max-width: 600px) {
 
+  #formentrybox{
+    width: 300px;
+  }
+  
+}
+
+@media only screen and (max-height: 600px) {
+
+  #formentrybox{
+    height: 400px;
+    overflow: scroll;
+  }
+  
+}
 
 
