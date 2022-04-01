@@ -1,15 +1,17 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-function InputGradeRank() {
+function Armyranks() {
 
     const [grade, setGrade] = useState('')
     const [rank, setRank] = useState('');
+
+    
 
     const gradeSystem = [
         { grade: 'E1', rank: 'PVT' },
@@ -30,6 +32,17 @@ function InputGradeRank() {
         { grade: 'O3', rank: 'CPT' }
     ]
 
+    useEffect(() => {
+        setRank(() => {
+            for(let i = 0; i < gradeSystem.length; i++){
+                if(grade === gradeSystem[i].grade){
+                    return gradeSystem[i].rank;
+                }
+            }
+        });
+      }, [grade]);
+
+
     return (
         <>
             <FormControl sx={{ m: 1, minWidth: 100 }}>
@@ -44,26 +57,22 @@ function InputGradeRank() {
                     {gradeSystem.map((info, index) => (
                         <MenuItem key={index} value={info.grade}>{info.grade}</MenuItem>
                     ))}
-
                 </Select>
             </FormControl >
             <FormControl sx={{ m: 1, minWidth: 100 }}>
                 <InputLabel id="rank">Rank</InputLabel>
-                <Select
-                    required
+                <Select 
+                    disabled
                     variant="standard"
                     labelId="rank"
                     value={rank}
-                    onChange={e => setRank(e.target.value)}
+                    
                 >
-                    {gradeSystem.map((info, index) => (
-                        <MenuItem key={index} value={info.rank}>{info.rank}</MenuItem>
-                    ))}
+                    <option value={rank}>{rank}</option>
                 </Select>
-            </FormControl >
-
+            </FormControl>
         </>
     )
 }
 
-export default InputGradeRank;
+export default Armyranks;

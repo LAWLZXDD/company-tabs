@@ -26,7 +26,7 @@ function InputContactInfo() {
                 label="Contact Number"
                 required
                 type="tel"
-                inputProps={{inputMode: 'numeric', pattern: '[0-9]{3}-[0-9]{3}-[0-9]{4}'}}
+                inputProps={{inputMode: 'numeric', pattern: '[0-9]{3}[0-9]{3}[0-9]{4}'}}
                 variant="standard"
                 id="phonenumber"
                 placeholder="XXX-XXX-XXXX"

@@ -5,10 +5,11 @@ import CloseIcon from '@mui/icons-material/Close'
 import { Grid } from '@mui/material';
 
 import InputName from "./InputName";
-import InputGradeRank from "./InputGradeRank";
+// import InputGradeRank from "./InputGradeRank";
 import InputSection from "./InputSection";
 import InputContactInfo from './InputContactInfo';
 import InputDob from './InputDob';
+import Armyranks from './Armyranks';
 
 
 const style = {
@@ -77,7 +78,8 @@ function AddPersonnelModal() {
                         <form onSubmit={handleSubmit} >
 
                             <Box>
-                                <InputGradeRank />
+                                {/* <InputGradeRank /> */}
+                                <Armyranks />
                                 <InputSection />
                                 <InputName />
                                 <InputDob />

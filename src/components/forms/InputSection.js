@@ -11,7 +11,7 @@ function InputSection(){
         <FormControl sx={{ m: 1, minWidth: 100 }}>
             <InputLabel id="section">Section</InputLabel>
                 <Select
-                required 
+                    required 
                     variant="standard"
                     labelId="section"
                     value={section}
