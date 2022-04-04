@@ -1,15 +1,18 @@
-import { FormControl, InputLabel, MenuItem } from "@mui/material";
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React, { useState } from "react";
+
+import MilGrade from './MilGrade';
+import CtrGrade from './CtrGrade';
+import DacGrade from './DacGrade';
 
 function PersonnelType(){
 
     const [personType, setPersonType] = useState('');
 
-
     return(
-        
-        <FormControl>
-            <InputLabel id="personneltype">Affiliation</InputLabel>
+        <>
+        <FormControl sx={{ m: 1, minWidth: 150}}>
+            <InputLabel id="personneltype">Personnel Type</InputLabel>
             <Select
                 required
                 variant="standard"
@@ -18,25 +21,34 @@ function PersonnelType(){
                 onChange={e => setPersonType(e.target.value)}
             >
                 <MenuItem value="mil">Military</MenuItem>
-                <MenuItem value="dac">DAC</MenuItem>
-                <MenuItem value="ctr">CTR</MenuItem>
+                <MenuItem value="dac">DA Civilian</MenuItem>
+                <MenuItem value="ctr">Contractor</MenuItem>
             </Select>
-
-
-            {/* If personnelType == mil => display only Mil Ranks/Grades
-                else if ptype == dac => display only DAC Grades
-                else ptype = CTR
-            */}
-
-
-
-
-
-
-
-
         </FormControl>
-        
+        <FormControl>
+                        {
+                (personType === "mil" ?
+                    <div>
+                        <MilGrade />
+                    </div> :
+                    null)
+            }
+            {
+                (personType === "dac" ?
+                    <div>
+                        <DacGrade /> 
+                    </div> : 
+                    null)
+            }
+            {
+                (personType === "ctr" ?
+                    <div>
+                        <CtrGrade /> 
+                    </div> : 
+                    null)
+            }
+        </FormControl>
+        </>
     )
 }
 

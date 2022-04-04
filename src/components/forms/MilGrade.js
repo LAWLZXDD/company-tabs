@@ -6,7 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-function Armyranks() {
+function MilGrade() {
 
     const [grade, setGrade] = useState('')
     const [rank, setRank] = useState('');
@@ -65,6 +65,7 @@ function Armyranks() {
                     disabled
                     variant="standard"
                     labelId="rank"
+                    // defaultValue="PVT"
                     value={rank}
                     
                 >
@@ -75,4 +76,4 @@ function Armyranks() {
     )
 }
 
-export default Armyranks;
+export default MilGrade;

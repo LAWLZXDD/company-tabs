@@ -8,8 +8,8 @@ function InputSection(){
 
     return(
 
-        <FormControl sx={{ m: 1, minWidth: 100 }}>
-            <InputLabel id="section">Section</InputLabel>
+        <FormControl sx={{ m: 1, minWidth: 150 }}>
+            <InputLabel id="section">Assign Section</InputLabel>
                 <Select
                     required 
                     variant="standard"

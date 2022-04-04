@@ -5,11 +5,13 @@ import CloseIcon from '@mui/icons-material/Close'
 import { Grid } from '@mui/material';
 
 import InputName from "./InputName";
-// import InputGradeRank from "./InputGradeRank";
 import InputSection from "./InputSection";
 import InputContactInfo from './InputContactInfo';
 import InputDob from './InputDob';
-import Armyranks from './Armyranks';
+import PersonnelType from './InputPersonnelType';
+import DutyStatus from './DutyStatus';
+import DutyPosition from './DutyPosition';
+
 
 
 const style = {
@@ -39,6 +41,7 @@ function AddPersonnelModal() {
     function handleSubmit(e) {
         e.preventDefault()
         alert('User Info created on Database')
+        handleClose();
     }
 
 
@@ -51,7 +54,7 @@ function AddPersonnelModal() {
             > Add Personnel
             </Button>
             <Modal
-                
+
                 open={open}
                 onClose={handleClose}
             >
@@ -78,9 +81,16 @@ function AddPersonnelModal() {
                         <form onSubmit={handleSubmit} >
 
                             <Box>
-                                {/* <InputGradeRank /> */}
-                                <Armyranks />
+                                <PersonnelType />
+                            </Box>
+                            <Box>
+                                <DutyStatus />
+                            </Box>
+                            <Box>
                                 <InputSection />
+                                <DutyPosition />
+                            </Box>
+                            <Box>
                                 <InputName />
                                 <InputDob />
                             </Box>
@@ -88,11 +98,6 @@ function AddPersonnelModal() {
                             <Box>
                                 <InputContactInfo />
                             </Box>
-                            
-                            
-                            
-                            
-                            
 
                             <button type="submit">Submit</button>
                         </form>

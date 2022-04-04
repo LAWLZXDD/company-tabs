@@ -30,7 +30,7 @@ function InputContactInfo() {
                 variant="standard"
                 id="phonenumber"
                 placeholder="XXX-XXX-XXXX"
-                helperText="Format: XXX-XXX-XXXX"
+                helperText="Format: XXXXXXXXXX"
                 value={phoneNumber}
                 onChange={e => setPhoneNumber(e.target.value)}
             />
