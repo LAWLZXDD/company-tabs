@@ -12,7 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { Link } from "react-router-dom";
 
 
-const pages = ['Available', 'On Leave', 'TDY', 'Projections'];
+const pages = ['Available', 'Leave', 'TDY', 'Projections'];
 
 function Navibar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -75,9 +75,11 @@ function Navibar() {
                                 }}
                             >
                                 {pages.map((page) => (
-                                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                        <Typography textAlign="center">{page}</Typography>
-                                    </MenuItem>
+                                    <Link to={page}>
+                                        <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                            <Typography textAlign="center">{page}</Typography>
+                                        </MenuItem>
+                                    </Link>
                                 ))}
                             </Menu>
                         </Box>
@@ -91,14 +93,16 @@ function Navibar() {
                         </Typography>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} className="nav-links">
                             {pages.map((page) => (
-                                <Button
-                                    id="navi-button"
-                                    key={page}
-                                    onClick={handleCloseNavMenu}
-                                    sx={{ my: 2, color: 'white', display: 'block' }}
-                                >
-                                    {page}
-                                </Button>
+                                <Link to={page}>
+                                    <Button
+                                        id="navi-button"
+                                        key={page}
+                                        onClick={handleCloseNavMenu}
+                                        sx={{ my: 2, color: 'white', display: 'block' }}
+                                    >
+                                        {page}
+                                    </Button>
+                                </Link>
                             ))}
                         </Box>
                     </Toolbar>

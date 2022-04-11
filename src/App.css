@@ -31,6 +31,9 @@
 .nav-links{
   justify-content: space-evenly;
 }
+.nav-links a{
+  text-decoration: none;
+}
 #navi-button{
   font-size: 20px;
   border: white solid 1px
