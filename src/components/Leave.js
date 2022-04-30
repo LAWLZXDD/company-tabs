@@ -1,11 +1,11 @@
 import React from "react";
 
-function Leave(){
+function Leave() {
 
-    return(
+    return (
         <>
-        <h1>LEAVE and PASS</h1>
-        <p>REPLACE ME with relevant data</p>
+            <h1>LEAVE and PASS</h1>
+            <p>REPLACE ME with relevant data</p>
         </>
     )
 }

@@ -11,8 +11,6 @@ import Projections from './components/Projections';
 
 function App() {
 
-
-
   return (
     <>
       <Navibar />
