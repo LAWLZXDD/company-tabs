@@ -5,7 +5,6 @@ import Taskingglance from "./Taskingglance";
 import Leaveglance from "./Leaveglance";
 import Tdyglance from "./Tdyglance";
 
-
 function Glancetable() {
 
     return (

@@ -1,11 +1,11 @@
 import React from "react";
 
-function Tdy(){
+function Tdy() {
 
-    return(
+    return (
         <>
-        <h1>Schools and other Temp Duties</h1>
-        <p>REPLACE ME with relevant data</p>
+            <h1>Schools and other Temp Duties</h1>
+            <p>REPLACE ME with relevant data</p>
         </>
     )
 }

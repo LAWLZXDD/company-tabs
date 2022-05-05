@@ -11,7 +11,7 @@ import InputDob from './InputDob';
 import PersonnelType from './InputPersonnelType';
 import DutyStatus from './DutyStatus';
 import DutyPosition from './DutyPosition';
-
+import TestForm from './TestForm';
 
 
 const style = {
@@ -40,10 +40,38 @@ function AddPersonnelModal() {
 
     function handleSubmit(e) {
         e.preventDefault()
+
+        let formData = {};
+        let el = e.target.elements;
+
+        for (let i = 0; i < el.length; i++) {
+            const idName = el[i].id;
+            el[i].value && idName &&
+                (formData[idName] = el[i].value);
+        }
+        console.log(formData)
+        formSubmit(formData)
         alert('User Info created on Database')
         handleClose();
     }
 
+    function formSubmit(data) {
+        fetch('http://localhost:3001/', {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }
 
     return (
         <Box>
@@ -54,7 +82,6 @@ function AddPersonnelModal() {
             > Add Personnel
             </Button>
             <Modal
-
                 open={open}
                 onClose={handleClose}
             >
@@ -78,9 +105,9 @@ function AddPersonnelModal() {
                     </Grid>
                     {/* FORM STARTS HERE */}
                     <Grid>
-                        <form onSubmit={handleSubmit} >
+                        <form onSubmit={handleSubmit}>
 
-                            <Box>
+                            {/* <Box>
                                 <PersonnelType />
                             </Box>
                             <Box>
@@ -97,7 +124,9 @@ function AddPersonnelModal() {
 
                             <Box>
                                 <InputContactInfo />
-                            </Box>
+                            </Box> */}
+
+                            <TestForm />
 
                             <button type="submit">Submit</button>
                         </form>

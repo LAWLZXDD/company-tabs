@@ -1,45 +1,39 @@
-const express = require('express')
-const app = express ()
+const express = require('express');
+const app = express ();
+const cors = require('cors');
+
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
 
 
+// import available route
+const availRoute = require('./routes/available')
+
+// Middleware
+app.use(express.json())
+app.use(cors({
+    origin: "*"
+}))
+app.use('/available', availRoute)
+
+
+// Routes
 app.get('/', (req, res) => {
-    res.send('Homepage')
+    res.send('This is where my server starts')
 })
 
-app.get('/Available', (req, res) => {
-    const personnel = [
-        {
-            id: 1,
-            firstname: 'phil',
-            middlename: 'j',
-            lastname: 'lo'
+app.post('/', async (req, res) => {
+    const  { firstname, middlename, lastname }  = req.body
+    const add = await prisma.personnel.create({
+        data: {
+            firstname,
+            middlename,
+            lastname
         },
-        {
-            id: 2,
-            firstname: 'mlaf',
-            middlename: 'j',
-            lastname: 'oinkowicz'
-        },
-        {
-            id: 3,
-            firstname: 'car',
-            middlename: 'los',
-            lastname: 'panda'
-        },
-    ];
-    res.json(personnel);
+    })
+    res.json(add);
 })
 
-app.get('/Leave', (req, res) => {
-    res.send('Leave')
+app.listen(3001, () => {
+    console.log("HEY LOOK MY SERVER IS BEING RENDERED")
 })
-
-app.get('/TDY', (req, res) => {
-    res.send('TDY')
-})
-
-app.get('/Projections', (req, res) => {
-    res.send('Projections')
-})
-
-app.listen(3001)
